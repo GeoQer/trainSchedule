@@ -1,3 +1,5 @@
+//this is not complete. Hopefully I will have it updated and working by the time to pull it. If not...one momre to do on fall and/or winter break.
+
 var rowCount = 0;
 var trainName = [];
 var destination = [];

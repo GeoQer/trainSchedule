@@ -15,6 +15,7 @@ $(document).ready(function () {
 
     var database = firebase.database();
 
+    //retrieve data from user inputs
     $('#add-train-btn').on('click', function (event) {
         event.preventDefault();
 
@@ -43,6 +44,21 @@ $(document).ready(function () {
         $('#first-stop-input').val('');
     });
 
+//add data to Firebase
+database.ref().on('child_added', function(childSnapshot){
+    console.log(shildSnapshot.val());
+
+    var trainName = childSnapshot.val().name;
+    var trainDestination = childSnapshot.val().destination;
+    var trainFrequency = childSnapshot.val().frequency;
+    var trainFirstStop = childSnapshot.val().firstStop;
+
+    console.log(trainName);
+    console.log(trainDestination);
+    console.log(trainFrequency);
+    console.log(trainFirstStop);
+    
+})
 
     /*  '<tr>'
      '<th scope="row">' + rowCount + '</th>'
